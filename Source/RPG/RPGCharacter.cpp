@@ -2,12 +2,15 @@
 
 #include "RPGCharacter.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "RPGGameMode.h"
+#include "RPGGameModeBase.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Engine/World.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ARPGCharacter
@@ -74,8 +77,21 @@ void ARPGCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInput
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ARPGCharacter::OnResetVR);
+
+	PlayerInputComponent->BindAction(TEXT("Attack"), EInputEvent::IE_Pressed, this, &ARPGCharacter::CharacterMeleeAttack);
+	PlayerInputComponent->BindAction(TEXT("Block"), EInputEvent::IE_Pressed, this, &ARPGCharacter::CharacterMeleeBlock);
 }
 
+
+bool ARPGCharacter::IsDead() const
+{
+	return Health <= 0;
+}
+
+float ARPGCharacter::GetHealthPercent() const
+{
+	return Health/MaxHealth;
+}
 
 void ARPGCharacter::OnResetVR()
 {
@@ -90,6 +106,34 @@ void ARPGCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location
 void ARPGCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
 		StopJumping();
+}
+
+void ARPGCharacter::CharacterMeleeAttack()
+{
+	
+}
+
+void ARPGCharacter::CharacterMeleeBlock()
+{
+}
+
+float ARPGCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	float DamageToApply = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	DamageToApply = FMath::Min(Health, DamageToApply);
+	Health -= DamageToApply;
+	UE_LOG(LogTemp, Warning, TEXT("Health left %f"), Health);
+	if (IsDead())
+	{
+		ARPGGameModeBase* GameModeBase = GetWorld()->GetAuthGameMode<ARPGGameModeBase>();
+		if (GameModeBase != nullptr)
+		{
+			GameModeBase->PawnKilled(this);
+		}
+		DetachFromControllerPendingDestroy();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	}
+	return DamageToApply;
 }
 
 void ARPGCharacter::TurnAtRate(float Rate)

@@ -18,6 +18,7 @@ class ARPGCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+	
 public:
 	ARPGCharacter();
 
@@ -28,7 +29,10 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
-
+	UFUNCTION(BlueprintPure)
+    bool IsDead() const;
+	UFUNCTION(BlueprintPure)
+        float GetHealthPercent() const;
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -57,6 +61,19 @@ protected:
 
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
+
+
+	void CharacterMeleeAttack();
+
+	void CharacterMeleeBlock();
+
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+	
+	UPROPERTY(EditDefaultsOnly)
+	float MaxHealth = 100;
+
+	UPROPERTY(VisibleAnywhere)
+	float Health;
 
 protected:
 	// APawn interface
