@@ -43491,6 +43491,14 @@
       <e p="RPG.uproject" t="Include" />
       <e p="Source" t="Include">
         <e p="RPG" t="Include">
+          <e p="BTService_PlayerLocation.cpp" t="Include" />
+          <e p="BTService_PlayerLocation.h" t="Include" />
+          <e p="BTService_PlayerLocationIfSeen.cpp" t="Include" />
+          <e p="BTService_PlayerLocationIfSeen.h" t="Include" />
+          <e p="BTTask_ClearBlackboardBase.cpp" t="Include" />
+          <e p="BTTask_ClearBlackboardBase.h" t="Include" />
+          <e p="MagicAIController.cpp" t="Include" />
+          <e p="MagicAIController.h" t="Include" />
           <e p="RPG.Build.cs" t="Include" />
           <e p="RPG.cpp" t="Include" />
           <e p="RPG.h" t="Include" />

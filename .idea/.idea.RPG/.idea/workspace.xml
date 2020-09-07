@@ -24,20 +24,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Test/DealDamageNotify.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/RPGGameModeBAse.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/TestDummy.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/RPGGameModeBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/RPGGameModeBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/Animations/Attack_PrimaryA_Montage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/Animations/Attack_PrimaryA_Montage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/Test.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/Test.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/GreystonePlayerCharacter_Child.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/BTTask_BlueprintBase_New.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/MagicAI.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_ClearBlackboardBase.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_ClearBlackboardBase.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/Animations/Attack_PrimaryC_Montage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/Animations/Attack_PrimaryC_Montage.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/GreystonePlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/GreystonePlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/TestDummy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/TestDummy.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap_BuiltData.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPG.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/RPG.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +66,13 @@
         <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGGameModeBase.h" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGGameModeBase.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" />
       </list>
     </option>
   </component>
@@ -396,14 +413,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599412702585</updated>
-      <workItem from="1599412727188" duration="7129000" />
+      <workItem from="1599412727188" duration="10154000" />
+      <workItem from="1599442470157" duration="982000" />
+      <workItem from="1599443498220" duration="1118000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -415,6 +434,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1002" y="583" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1599413428498">

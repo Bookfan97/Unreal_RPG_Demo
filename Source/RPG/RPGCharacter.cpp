@@ -93,6 +93,12 @@ float ARPGCharacter::GetHealthPercent() const
 	return Health/MaxHealth;
 }
 
+void ARPGCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	Health = MaxHealth;
+}
+
 void ARPGCharacter::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();

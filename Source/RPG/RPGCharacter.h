@@ -34,7 +34,7 @@ public:
 	UFUNCTION(BlueprintPure)
         float GetHealthPercent() const;
 protected:
-
+	virtual void BeginPlay() override;
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 
