@@ -1,7 +1,10 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "RPGCharacter.h"
+
+#include "DrawDebugHelpers.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "MagicProjectile.h"
 #include "RPGGameMode.h"
 #include "RPGGameModeBase.h"
 #include "Camera/CameraComponent.h"
@@ -11,6 +14,8 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ARPGCharacter
@@ -48,6 +53,21 @@ ARPGCharacter::ARPGCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+
+	if(isMagic)
+	{
+		Health = MaxHealth;
+	 	// static ConstructorHelpers::FObjectFinder<UAnimSequence> anim(TEXT("AnimSequence'/Game/Mannequin/Animations/ThirdPersonJump_Start.ThirdPersonJump_Start'"));
+   //      Anim = anim.Object;
+	 }
+
+	if(isMelee)
+	{
+		GetMesh()->HideBoneByName(TEXT("sword_bottom"), EPhysBodyOp::PBO_None);
+		// Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("weaponSocket"));
+		// Gun->SetOwner(this);
+	}
+	
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -114,13 +134,109 @@ void ARPGCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location
 		StopJumping();
 }
 
+void ARPGCharacter::Attack()
+{
+	FVector PlayerLoc = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+	FRotator PlayerRot = UKismetMathLibrary::FindLookAtRotation(this->GetActorLocation(), PlayerLoc);
+	this->SetActorRotation(PlayerRot, ETeleportType::None);
+	if (isMelee)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("This is a melee attack"));
+		//CharacterMeleeAttack();
+	}
+	if(isMagic)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("This is a magic attack"));
+		CharacterMagicAttack(PlayerLoc);
+	}
+}
+
 void ARPGCharacter::CharacterMeleeAttack()
 {
-	
+	if (AttackAnimation)
+	{
+		UAnimInstance* AnimInstance = this->GetMesh()->GetAnimInstance();
+		if (AnimInstance)
+		{
+			AnimInstance->PlaySlotAnimationAsDynamicMontage(AttackAnimation, "Fire Animation", 0.0f);
+		}
+	}
+}
+
+bool ARPGCharacter::AimTrace(FHitResult& Hit, FVector& ShotDirection)
+{
+	// AController* OwnerController = GetOwnerController();
+	// if (OwnerController == nullptr) return false;
+	FVector Location;
+	FRotator Rotation;
+	this->GetController()->GetPlayerViewPoint(Location, Rotation);
+	ShotDirection = Rotation.Vector();
+	FVector End = Location + Rotation.Vector() * MaxRange;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
+	Params.AddIgnoredActor(GetOwner());
+	return GetWorld()->LineTraceSingleByChannel(Hit, Location, End, ECollisionChannel::ECC_GameTraceChannel1, Params);
+}
+
+void ARPGCharacter::CharacterMagicAttack(const FVector& temp)
+{
+	FVector Player = temp.ForwardVector;
+	if (ProjectileClass)
+	{
+		FHitResult Hit;
+		FVector ShotDirection;
+		//FVector Player = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation().ForwardVector;
+		bool bSuccess = AimTrace(Hit, ShotDirection);
+		FVector traceStart = this->GetActorLocation();
+		//AActor player = GetWorld()->GetFirstPlayerController()->Actor;
+		//FVector Player = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+		DrawDebugLine(GetWorld(), traceStart,ShotDirection, FColor(255, 0, 0),false, 50, 0,12.333);
+		
+		// if (bSuccess)
+		// {
+			// UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection.Rotation());
+			// UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, Hit.Location, ShotDirection.Rotation());
+			AActor* HitActor = Hit.GetActor();
+			//HitActor->GetActorLocation();
+			//IsPlayerControlled();
+			if (HitActor != nullptr) // Hit actor needs to be the character
+				{
+				if (AttackAnimation)
+				{
+					UAnimInstance* AnimInstance = this->GetMesh()->GetAnimInstance();
+					if (AnimInstance)
+					{
+						AnimInstance->PlaySlotAnimationAsDynamicMontage(AttackAnimation, "DefaultSlot", 0.0f);
+					}
+				}
+				FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
+				//FPointDamageEvent DamageEvent(Damage, Hit, Player, nullptr);
+				AController* OwnerController = this->GetController();//->GetOwnerController();
+				HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
+				}
+		// }
+			FVector HandLocation = this->GetMesh()->GetSocketLocation("hand_lSocket");
+			FRotator HandRotation = this->GetMesh()->GetSocketRotation("hand_lSocket");
+			FActorSpawnParameters ActorSpawnParams;
+			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+			ActorSpawnParams.Instigator = this;
+			AMagicProjectile* Projectile = GetWorld()->SpawnActor<AMagicProjectile>(ProjectileClass, HandLocation, HandRotation, ActorSpawnParams);
+			// if (Projectile)
+			// {
+				FVector LaunchDirection = HandRotation.Vector();
+                Projectile->FireInDirection(Player);
+			//}
+			
+			//GetWorld()->SpawnActor<AMagicProjectile>(ProjectileClass, Player, HandRotation, ActorSpawnParams);
+		}
+	 //}
+	// FVector ActorLocation = GetActorLocation();
+	// FVector PlayerLocation = 
 }
 
 void ARPGCharacter::CharacterMeleeBlock()
 {
+	
 }
 
 float ARPGCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)

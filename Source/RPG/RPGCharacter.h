@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "MagicProjectile.h"
 #include "GameFramework/Character.h"
 #include "RPGCharacter.generated.h"
 
@@ -18,7 +20,13 @@ class ARPGCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
-	
+	UAnimSequence* Anim;
+	UParticleSystem* ImpactEffect;
+	USoundBase* ImpactSound;
+	FVector MaxRange;
+	UPROPERTY(EditDefaultsOnly)
+	float Damage;
+
 public:
 	ARPGCharacter();
 
@@ -33,6 +41,12 @@ public:
     bool IsDead() const;
 	UFUNCTION(BlueprintPure)
         float GetHealthPercent() const;
+	void CharacterMagicAttack(const FVector& Vector);
+	void Attack();
+	UPROPERTY(EditDefaultsOnly, Category = "Gameplay")
+	UAnimSequence* AttackAnimation;
+	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
+	TSubclassOf<AMagicProjectile> ProjectileClass;
 protected:
 	virtual void BeginPlay() override;
 	/** Resets HMD orientation in VR. */
@@ -64,6 +78,8 @@ protected:
 
 
 	void CharacterMeleeAttack();
+	bool AimTrace(FHitResult& Hit, FVector& ShotDirection);
+	void CharacterMagicAttack();
 
 	void CharacterMeleeBlock();
 
@@ -75,6 +91,12 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	float Health;
 
+	UPROPERTY(EditDefaultsOnly)
+	bool isMelee;
+
+	UPROPERTY(EditDefaultsOnly)
+	bool isMagic;
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -85,5 +107,9 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+private:
+	UPROPERTY(EditAnywhere)
+	class UBehaviorTree* AIBehavior;
 };
 

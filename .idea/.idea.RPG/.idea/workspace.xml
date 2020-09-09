@@ -24,30 +24,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/GreystonePlayerCharacter_Child.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/BTTask_BlueprintBase_New.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/MagicAI.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_ClearBlackboardBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_ClearBlackboardBase.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/ABP_MeleeCharacter.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/Attack_PrimaryA_Montage_Child.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/Attack_PrimaryB_Montage_Child.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/Attack_PrimaryC_Montage_Child.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/FloatingHealthBar.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/MagicPawn.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/MeleePawn.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/WBP_HealthbarFloat.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/PlayerPawn.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicProjectile.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/Animations/Attack_PrimaryC_Montage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/Animations/Attack_PrimaryC_Montage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/GreystonePlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGreystone/Characters/Heroes/Greystone/GreystonePlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/TestDummy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/TestDummy.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ParagonGideon/Characters/Heroes/Gideon/Meshes/Gideon_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGideon/Characters/Heroes/Gideon/Meshes/Gideon_Skeleton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/ABP_MAgicCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/ABP_MAgicCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/BT_EnemyAI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/BT_EnemyAI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/DealDamageNotify.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/DealDamageNotify.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/RPGGameModeBAse.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/RPGGameModeBAse.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/AI_Magic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/AI_Magic.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap_BuiltData.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPG.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/RPG.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +60,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Program Files/Epic Games/UE_4.25/Engine/Source/Runtime/Core/Public/IOS/IOSPlatformCompilerSetup.h" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Source/RPG/HealthComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/HealthComponent.h" />
-        <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGGameModeBase.h" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGGameModeBase.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.h" />
@@ -73,6 +77,12 @@
         <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" />
+        <option value="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/MagicProjectile.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" />
       </list>
     </option>
   </component>
@@ -416,6 +426,12 @@
       <workItem from="1599412727188" duration="10154000" />
       <workItem from="1599442470157" duration="982000" />
       <workItem from="1599443498220" duration="1118000" />
+      <workItem from="1599494531182" duration="204000" />
+      <workItem from="1599494771586" duration="14519000" />
+      <workItem from="1599514041661" duration="13464000" />
+      <workItem from="1599535486925" duration="863000" />
+      <workItem from="1599579537027" duration="2547000" />
+      <workItem from="1599601321779" duration="1789000" />
     </task>
     <servers />
   </component>
@@ -437,6 +453,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1258" height="401" key="GridCell.Tab.0.bottom" timestamp="1599513668868">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1258" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
+    <state width="1258" height="401" key="GridCell.Tab.0.center" timestamp="1599513668868">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1258" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
+    <state width="1258" height="401" key="GridCell.Tab.0.left" timestamp="1599513668868">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1258" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
+    <state width="1258" height="401" key="GridCell.Tab.0.right" timestamp="1599513668868">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1258" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
     <state x="1002" y="583" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1599413428498">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
