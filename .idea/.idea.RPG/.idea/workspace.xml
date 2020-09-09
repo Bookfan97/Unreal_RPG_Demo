@@ -23,35 +23,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Test/ABP_MeleeCharacter.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/Attack_PrimaryA_Montage_Child.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/Attack_PrimaryB_Montage_Child.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/Attack_PrimaryC_Montage_Child.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/FloatingHealthBar.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/MagicPawn.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/MeleePawn.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Test/WBP_HealthbarFloat.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/PlayerPawn.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RPG/MagicProjectile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ParagonGideon/Characters/Heroes/Gideon/Meshes/Gideon_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGideon/Characters/Heroes/Gideon/Meshes/Gideon_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/ABP_MAgicCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/ABP_MAgicCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/BT_EnemyAI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/BT_EnemyAI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/DealDamageNotify.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/DealDamageNotify.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/RPGGameModeBAse.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/RPGGameModeBAse.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/AI_Magic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/AI_Magic.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPG.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/RPG.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" afterDir="false" />
-    </list>
+    <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -431,7 +403,7 @@
       <workItem from="1599514041661" duration="13464000" />
       <workItem from="1599535486925" duration="863000" />
       <workItem from="1599579537027" duration="2547000" />
-      <workItem from="1599601321779" duration="1789000" />
+      <workItem from="1599601321779" duration="1792000" />
     </task>
     <servers />
   </component>
