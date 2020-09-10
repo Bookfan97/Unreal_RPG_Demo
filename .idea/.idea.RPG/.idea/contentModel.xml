@@ -1872,9 +1872,6 @@
                 <e p="LifetimeImpl.h" t="Include" />
                 <e p="SequentialLifetimes.h" t="Include" />
               </e>
-              <e p="logger" t="Include">
-                <e p="Logger.h" t="Include" />
-              </e>
               <e p="pch.h" t="Include" />
               <e p="reactive" t="Include">
                 <e p="base" t="Include">
@@ -2132,31 +2129,43 @@
               </e>
             </e>
           </e>
-          <e p="libs" t="Include">
-            <e p="Win" t="Include">
-              <e p="x64" t="Include">
-                <e p="Debug" t="Include">
-                  <e p="clsocket.lib" t="Include" />
-                  <e p="rd_core_cpp.lib" t="Include" />
-                  <e p="rd_framework_cpp.lib" t="Include" />
-                </e>
-                <e p="Release" t="Include">
-                  <e p="clsocket.lib" t="Include" />
-                  <e p="rd_core_cpp.lib" t="Include" />
-                  <e p="rd_framework_cpp.lib" t="Include" />
+          <e p="RD.Build.cs" t="Include" />
+          <e p="win-vs17" t="Include">
+            <e p="libs" t="Include">
+              <e p="Win" t="Include">
+                <e p="x64" t="Include">
+                  <e p="Release" t="Include">
+                    <e p="clsocket.lib" t="Include" />
+                    <e p="rd_core_cpp.lib" t="Include" />
+                    <e p="rd_framework_cpp.lib" t="Include" />
+                    <e p="spdlog.lib" t="Include" />
+                  </e>
                 </e>
               </e>
             </e>
           </e>
-          <e p="RD.Build.cs" t="Include" />
+          <e p="win-vs19" t="Include">
+            <e p="libs" t="Include">
+              <e p="Win" t="Include">
+                <e p="x64" t="Include">
+                  <e p="Release" t="Include">
+                    <e p="clsocket.lib" t="Include" />
+                    <e p="rd_core_cpp.lib" t="Include" />
+                    <e p="rd_framework_cpp.lib" t="Include" />
+                    <e p="spdlog.lib" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+          </e>
         </e>
         <e p="RiderBlueprintExtension" t="Include">
           <e p="Private" t="Include">
             <e p="BlueprintProvider.cpp" t="Include" />
-            <e p="BlueprintProvider.hpp" t="Include" />
             <e p="RiderBlueprintExtension.cpp" t="Include" />
           </e>
           <e p="Public" t="Include">
+            <e p="BlueprintProvider.hpp" t="Include" />
             <e p="RiderBlueprintExtension.hpp" t="Include" />
           </e>
           <e p="RiderBlueprintExtension.Build.cs" t="Include" />
@@ -2184,55 +2193,53 @@
               <e p="CMakeLists.txt" t="Include" />
               <e p="instantiations.cpp" t="Include" />
               <e p="instantiations.h" t="Include" />
-              <e p="pch_RdEditorRoot.cpp" t="Include" />
-              <e p="pch_RdEditorRoot.h" t="Include" />
-              <e p="pch_UE4Library.cpp" t="Include" />
-              <e p="pch_UE4Library.h" t="Include" />
               <e p="RdEditorModel" t="Include">
-                <e p="RdEditorModel.cpp" t="Include" />
-                <e p="RdEditorModel.h" t="Include" />
+                <e p="RdEditorModel.Generated.cpp" t="Include" />
+                <e p="RdEditorModel.Generated.h" t="Include" />
               </e>
               <e p="RdEditorRoot" t="Include">
-                <e p="RdEditorRoot.cpp" t="Include" />
-                <e p="RdEditorRoot.h" t="Include" />
+                <e p="RdEditorRoot.Generated.cpp" t="Include" />
+                <e p="RdEditorRoot.Generated.h" t="Include" />
               </e>
               <e p="UE4Library" t="Include">
-                <e p="BlueprintFunction.cpp" t="Include" />
-                <e p="BlueprintFunction.h" t="Include" />
-                <e p="BlueprintHighlighter.cpp" t="Include" />
-                <e p="BlueprintHighlighter.h" t="Include" />
-                <e p="BlueprintReference.cpp" t="Include" />
-                <e p="BlueprintReference.h" t="Include" />
-                <e p="EmptyScriptCallStack.cpp" t="Include" />
-                <e p="EmptyScriptCallStack.h" t="Include" />
-                <e p="IScriptCallStack.cpp" t="Include" />
-                <e p="IScriptCallStack.h" t="Include" />
-                <e p="IScriptCallStack_Unknown.cpp" t="Include" />
-                <e p="IScriptCallStack_Unknown.h" t="Include" />
-                <e p="IScriptMsg.cpp" t="Include" />
-                <e p="IScriptMsg.h" t="Include" />
-                <e p="IScriptMsg_Unknown.cpp" t="Include" />
-                <e p="IScriptMsg_Unknown.h" t="Include" />
-                <e p="LogMessageInfo.cpp" t="Include" />
-                <e p="LogMessageInfo.h" t="Include" />
-                <e p="ScriptCallStack.cpp" t="Include" />
-                <e p="ScriptCallStack.h" t="Include" />
-                <e p="ScriptCallStackFrame.cpp" t="Include" />
-                <e p="ScriptCallStackFrame.h" t="Include" />
-                <e p="ScriptMsgCallStack.cpp" t="Include" />
-                <e p="ScriptMsgCallStack.h" t="Include" />
-                <e p="ScriptMsgException.cpp" t="Include" />
-                <e p="ScriptMsgException.h" t="Include" />
-                <e p="StringRange.cpp" t="Include" />
-                <e p="StringRange.h" t="Include" />
-                <e p="UClass.cpp" t="Include" />
-                <e p="UClass.h" t="Include" />
-                <e p="UE4Library.cpp" t="Include" />
-                <e p="UE4Library.h" t="Include" />
-                <e p="UnableToDisplayScriptCallStack.cpp" t="Include" />
-                <e p="UnableToDisplayScriptCallStack.h" t="Include" />
-                <e p="UnrealLogEvent.cpp" t="Include" />
-                <e p="UnrealLogEvent.h" t="Include" />
+                <e p="BlueprintFunction.Generated.cpp" t="Include" />
+                <e p="BlueprintFunction.Generated.h" t="Include" />
+                <e p="BlueprintHighlighter.Generated.cpp" t="Include" />
+                <e p="BlueprintHighlighter.Generated.h" t="Include" />
+                <e p="BlueprintReference.Generated.cpp" t="Include" />
+                <e p="BlueprintReference.Generated.h" t="Include" />
+                <e p="EmptyScriptCallStack.Generated.cpp" t="Include" />
+                <e p="EmptyScriptCallStack.Generated.h" t="Include" />
+                <e p="IScriptCallStack.Generated.cpp" t="Include" />
+                <e p="IScriptCallStack.Generated.h" t="Include" />
+                <e p="IScriptCallStack_Unknown.Generated.cpp" t="Include" />
+                <e p="IScriptCallStack_Unknown.Generated.h" t="Include" />
+                <e p="IScriptMsg.Generated.cpp" t="Include" />
+                <e p="IScriptMsg.Generated.h" t="Include" />
+                <e p="IScriptMsg_Unknown.Generated.cpp" t="Include" />
+                <e p="IScriptMsg_Unknown.Generated.h" t="Include" />
+                <e p="LogMessageInfo.Generated.cpp" t="Include" />
+                <e p="LogMessageInfo.Generated.h" t="Include" />
+                <e p="PlayState.Generated.cpp" t="Include" />
+                <e p="PlayState.Generated.h" t="Include" />
+                <e p="ScriptCallStack.Generated.cpp" t="Include" />
+                <e p="ScriptCallStack.Generated.h" t="Include" />
+                <e p="ScriptCallStackFrame.Generated.cpp" t="Include" />
+                <e p="ScriptCallStackFrame.Generated.h" t="Include" />
+                <e p="ScriptMsgCallStack.Generated.cpp" t="Include" />
+                <e p="ScriptMsgCallStack.Generated.h" t="Include" />
+                <e p="ScriptMsgException.Generated.cpp" t="Include" />
+                <e p="ScriptMsgException.Generated.h" t="Include" />
+                <e p="StringRange.Generated.cpp" t="Include" />
+                <e p="StringRange.Generated.h" t="Include" />
+                <e p="UClass.Generated.cpp" t="Include" />
+                <e p="UClass.Generated.h" t="Include" />
+                <e p="UE4Library.Generated.cpp" t="Include" />
+                <e p="UE4Library.Generated.h" t="Include" />
+                <e p="UnableToDisplayScriptCallStack.Generated.cpp" t="Include" />
+                <e p="UnableToDisplayScriptCallStack.Generated.h" t="Include" />
+                <e p="UnrealLogEvent.Generated.cpp" t="Include" />
+                <e p="UnrealLogEvent.Generated.h" t="Include" />
               </e>
             </e>
             <e p="RiderLink.hpp" t="Include" />

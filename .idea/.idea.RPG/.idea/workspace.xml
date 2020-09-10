@@ -23,7 +23,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="" />
+    <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Test/BP_MagicProjectile.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/_ChildMagicProjectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/MagicPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/MagicPawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +55,6 @@
         <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.h" />
         <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" />
         <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" />
-        <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" />
         <option value="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" />
         <option value="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" />
@@ -55,6 +62,9 @@
         <option value="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPGPlayerController.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPGPlayerController.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" />
       </list>
     </option>
   </component>

@@ -16,6 +16,7 @@
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Preferences/AnimationBlueprintEditorOptions.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ARPGCharacter

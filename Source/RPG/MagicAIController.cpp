@@ -23,6 +23,7 @@ void AMagicAIController::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
     APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+    GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLocation"), PlayerPawn->GetActorLocation());
 }
 
 bool AMagicAIController::IsDead() const
