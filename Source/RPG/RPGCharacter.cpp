@@ -16,7 +16,6 @@
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
-#include "Preferences/AnimationBlueprintEditorOptions.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ARPGCharacter
@@ -36,7 +35,7 @@ ARPGCharacter::ARPGCharacter()
 	bUseControllerRotationRoll = false;
 
 	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
+	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f); // ...at this rotation rate
 	GetCharacterMovement()->JumpZVelocity = 600.f;
 	GetCharacterMovement()->AirControl = 0.2f;
@@ -44,7 +43,7 @@ ARPGCharacter::ARPGCharacter()
 	// Create a camera boom (pulls in towards the player if there is a collision)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character	
+	CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character
 	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
 
 	// Create a follow camera
@@ -52,23 +51,22 @@ ARPGCharacter::ARPGCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
+	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character)
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 
-	if(isMagic)
+	if (isMagic)
 	{
 		Health = MaxHealth;
-	 	// static ConstructorHelpers::FObjectFinder<UAnimSequence> anim(TEXT("AnimSequence'/Game/Mannequin/Animations/ThirdPersonJump_Start.ThirdPersonJump_Start'"));
+		// static ConstructorHelpers::FObjectFinder<UAnimSequence> anim(TEXT("AnimSequence'/Game/Mannequin/Animations/ThirdPersonJump_Start.ThirdPersonJump_Start'"));
    //      Anim = anim.Object;
-	 }
+	}
 
-	if(isMelee)
+	if (isMelee)
 	{
 		GetMesh()->HideBoneByName(TEXT("sword_bottom"), EPhysBodyOp::PBO_None);
 		// Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("weaponSocket"));
 		// Gun->SetOwner(this);
 	}
-	
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -76,6 +74,8 @@ ARPGCharacter::ARPGCharacter()
 
 void ARPGCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Controller: "), this->GetController());
+	toAttack = false;
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
@@ -103,15 +103,19 @@ void ARPGCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInput
 	PlayerInputComponent->BindAction(TEXT("Block"), EInputEvent::IE_Pressed, this, &ARPGCharacter::CharacterMeleeBlock);
 }
 
-
 bool ARPGCharacter::IsDead() const
 {
 	return Health <= 0;
 }
 
+bool ARPGCharacter::IsAttacking() const
+{
+	return toAttack;
+}
+
 float ARPGCharacter::GetHealthPercent() const
 {
-	return Health/MaxHealth;
+	return Health / MaxHealth;
 }
 
 void ARPGCharacter::BeginPlay()
@@ -127,27 +131,28 @@ void ARPGCharacter::OnResetVR()
 
 void ARPGCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		Jump();
+	Jump();
 }
 
 void ARPGCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		StopJumping();
+	StopJumping();
 }
 
 void ARPGCharacter::Attack()
 {
 	FVector PlayerLoc = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 	FRotator PlayerRot = UKismetMathLibrary::FindLookAtRotation(this->GetActorLocation(), PlayerLoc);
-	this->SetActorRotation(PlayerRot, ETeleportType::None);
+	bool rotation = this->SetActorRotation(PlayerRot, ETeleportType::None);
 	if (isMelee)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("This is a melee attack"));
 		//CharacterMeleeAttack();
 	}
-	if(isMagic)
+	if (isMagic)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("This is a magic attack"));
+		toAttack = true;
 		CharacterMagicAttack(PlayerLoc);
 	}
 }
@@ -159,7 +164,7 @@ void ARPGCharacter::CharacterMeleeAttack()
 		UAnimInstance* AnimInstance = this->GetMesh()->GetAnimInstance();
 		if (AnimInstance)
 		{
-			AnimInstance->PlaySlotAnimationAsDynamicMontage(AttackAnimation, "Fire Animation", 0.0f);
+			//AnimInstance->PlaySlotAnimationAsDynamicMontage(AttackAnimation, "Fire Animation", 0.0f);
 		}
 	}
 }
@@ -181,6 +186,9 @@ bool ARPGCharacter::AimTrace(FHitResult& Hit, FVector& ShotDirection)
 
 void ARPGCharacter::CharacterMagicAttack(const FVector& temp)
 {
+	TSubclassOf<UAnimInstance> test = this->GetMesh()->AnimClass->GetSuperClass();
+	UE_LOG(LogTemp, Warning, TEXT("Class : "), test);
+	// GetMesh()->PlayAnimation(AttackAnimation, false);
 	FVector Player = temp.ForwardVector;
 	if (ProjectileClass)
 	{
@@ -191,53 +199,58 @@ void ARPGCharacter::CharacterMagicAttack(const FVector& temp)
 		FVector traceStart = this->GetActorLocation();
 		//AActor player = GetWorld()->GetFirstPlayerController()->Actor;
 		//FVector Player = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-		DrawDebugLine(GetWorld(), traceStart,ShotDirection, FColor(255, 0, 0),false, 50, 0,12.333);
-		
+		//DrawDebugLine(GetWorld(), traceStart,ShotDirection, FColor(255, 0, 0),false, 50, 0,12.333);
+
 		// if (bSuccess)
 		// {
 			// UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection.Rotation());
 			// UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, Hit.Location, ShotDirection.Rotation());
-			AActor* HitActor = Hit.GetActor();
-			//HitActor->GetActorLocation();
-			//IsPlayerControlled();
-			if (HitActor != nullptr) // Hit actor needs to be the character
+		AActor* HitActor = Hit.GetActor();
+		//HitActor->GetActorLocation();
+		//IsPlayerControlled();
+		if (HitActor != nullptr) // Hit actor needs to be the character
+		{
+			if (AttackAnimation)
+			{
+				UAnimInstance* AnimInstance = this->GetMesh()->GetAnimInstance();
+				GetMesh()->PlayAnimation(AttackAnimation, false);
+				if (AnimInstance)
 				{
-				if (AttackAnimation)
-				{
-					UAnimInstance* AnimInstance = this->GetMesh()->GetAnimInstance();
-					if (AnimInstance)
-					{
-						AnimInstance->PlaySlotAnimationAsDynamicMontage(AttackAnimation, "DefaultSlot", 0.0f);
-					}
+					//GetMesh()->PlayAnimation(AttackAnimation, false);
+					//AnimInstance->PlaySlotAnimationAsDynamicMontage(AttackAnimation, "DefaultSlot", 0.0f);
 				}
-				FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
-				//FPointDamageEvent DamageEvent(Damage, Hit, Player, nullptr);
-				AController* OwnerController = this->GetController();//->GetOwnerController();
-				HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
-				}
-		// }
-			FVector HandLocation = this->GetMesh()->GetSocketLocation("hand_lSocket");
-			FRotator HandRotation = this->GetMesh()->GetSocketRotation("hand_lSocket");
-			FActorSpawnParameters ActorSpawnParams;
-			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
-			ActorSpawnParams.Instigator = this;
-			AMagicProjectile* Projectile = GetWorld()->SpawnActor<AMagicProjectile>(ProjectileClass, HandLocation, HandRotation, ActorSpawnParams);
-			// if (Projectile)
-			// {
-				FVector LaunchDirection = HandRotation.Vector();
-                Projectile->FireInDirection(Player);
-			//}
-			
-			//GetWorld()->SpawnActor<AMagicProjectile>(ProjectileClass, Player, HandRotation, ActorSpawnParams);
+			}
+			FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
+			//FPointDamageEvent DamageEvent(Damage, Hit, Player, nullptr);
+			AController* OwnerController = this->GetController();//->GetOwnerController();
+			HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
 		}
-	 //}
-	// FVector ActorLocation = GetActorLocation();
-	// FVector PlayerLocation = 
+		// }
+		//UAnimInstance* AnimInstance = this->GetMesh()->GetAnimInstance();
+		// GetMesh()->AnimClass->//PlayAnimation(AttackAnimation, false);
+		FVector HandLocation = this->GetMesh()->GetSocketLocation("neck_01");
+		FRotator HandRotation = this->GetMesh()->GetSocketRotation("neck_01");
+		FActorSpawnParameters ActorSpawnParams;
+		ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+		ActorSpawnParams.Instigator = this;
+		AMagicProjectile* Projectile = GetWorld()->SpawnActor<AMagicProjectile>(ProjectileClass, HandLocation, HandRotation, ActorSpawnParams);
+		// if (Projectile)
+		// {
+		FVector LaunchDirection = GetOwner()->GetActorForwardVector();
+		Projectile->FireInDirection(LaunchDirection);
+		toAttack = false;
+		//}
+
+		//GetWorld()->SpawnActor<AMagicProjectile>(ProjectileClass, Player, HandRotation, ActorSpawnParams);
+	}
+	//}
+   // FVector ActorLocation = GetActorLocation();
+   // FVector PlayerLocation =
 }
 
 void ARPGCharacter::CharacterMeleeBlock()
 {
-	
+	//Handled In Blueprint currently, bring over here
 }
 
 float ARPGCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
@@ -251,6 +264,7 @@ float ARPGCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEv
 		ARPGGameModeBase* GameModeBase = GetWorld()->GetAuthGameMode<ARPGGameModeBase>();
 		if (GameModeBase != nullptr)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("pawn Killed"), Health);
 			GameModeBase->PawnKilled(this);
 		}
 		DetachFromControllerPendingDestroy();
@@ -287,13 +301,13 @@ void ARPGCharacter::MoveForward(float Value)
 
 void ARPGCharacter::MoveRight(float Value)
 {
-	if ( (Controller != NULL) && (Value != 0.0f) )
+	if ((Controller != NULL) && (Value != 0.0f))
 	{
 		// find out which way is right
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
-	
-		// get right vector 
+
+		// get right vector
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);

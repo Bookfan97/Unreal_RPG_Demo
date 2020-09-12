@@ -7,15 +7,15 @@
 #include "BTTask_Attack.generated.h"
 
 /**
- * 
- */
+*
+*/
 UCLASS()
 class RPG_API UBTTask_Attack : public UBTTaskNode
 {
 	GENERATED_BODY()
 	public:
-    	UBTTask_Attack();
-    
-    protected:
-    	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+	UBTTask_Attack();
+
+	protected:
+	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 };

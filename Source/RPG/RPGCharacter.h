@@ -8,45 +8,48 @@
 #include "GameFramework/Character.h"
 #include "RPGCharacter.generated.h"
 
-UCLASS(config=Game)
+UCLASS(config = Game)
 class ARPGCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
+		/** Camera boom positioning the camera behind the character */
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		class USpringArmComponent* CameraBoom;
 
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FollowCamera;
+		class UCameraComponent* FollowCamera;
 	UAnimSequence* Anim;
 	UParticleSystem* ImpactEffect;
 	USoundBase* ImpactSound;
 	FVector MaxRange;
 	UPROPERTY(EditDefaultsOnly)
-	float Damage;
+		float Damage;
+	bool toAttack;
 
 public:
 	ARPGCharacter();
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
-	float BaseTurnRate;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+		float BaseTurnRate;
 
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
-	float BaseLookUpRate;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+		float BaseLookUpRate;
 	UFUNCTION(BlueprintPure)
-    bool IsDead() const;
+		bool IsDead() const;
 	UFUNCTION(BlueprintPure)
-        float GetHealthPercent() const;
+		bool IsAttacking() const;
+	UFUNCTION(BlueprintPure)
+		float GetHealthPercent() const;
 	void CharacterMagicAttack(const FVector& Vector);
 	void Attack();
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay")
-	UAnimSequence* AttackAnimation;
+		UAnimationAsset* AttackAnimation;
 	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
-	TSubclassOf<AMagicProjectile> ProjectileClass;
+		TSubclassOf<AMagicProjectile> ProjectileClass;
 protected:
 	virtual void BeginPlay() override;
 	/** Resets HMD orientation in VR. */
@@ -58,14 +61,14 @@ protected:
 	/** Called for side to side input */
 	void MoveRight(float Value);
 
-	/** 
-	 * Called via input to turn at a given rate. 
+	/**
+	 * Called via input to turn at a given rate.
 	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
 	 */
 	void TurnAtRate(float Rate);
 
 	/**
-	 * Called via input to turn look up/down at a given rate. 
+	 * Called via input to turn look up/down at a given rate.
 	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
 	 */
 	void LookUpAtRate(float Rate);
@@ -76,7 +79,6 @@ protected:
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
 
-
 	void CharacterMeleeAttack();
 	bool AimTrace(FHitResult& Hit, FVector& ShotDirection);
 	void CharacterMagicAttack();
@@ -84,18 +86,18 @@ protected:
 	void CharacterMeleeBlock();
 
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
-	
-	UPROPERTY(EditDefaultsOnly)
-	float MaxHealth = 100;
-
-	UPROPERTY(VisibleAnywhere)
-	float Health;
 
 	UPROPERTY(EditDefaultsOnly)
-	bool isMelee;
+		float MaxHealth = 100;
+
+	UPROPERTY(BlueprintReadWrite)
+		float Health;
 
 	UPROPERTY(EditDefaultsOnly)
-	bool isMagic;
+		bool isMelee;
+
+	UPROPERTY(EditDefaultsOnly)
+		bool isMagic;
 
 protected:
 	// APawn interface
@@ -110,6 +112,5 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere)
-	class UBehaviorTree* AIBehavior;
+		class UBehaviorTree* AIBehavior;
 };
-

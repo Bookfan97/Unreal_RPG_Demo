@@ -3,17 +3,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "RPGGameModeBase.h"
 #include "GameFramework/GameModeBase.h"
 #include "RPGGameMode.generated.h"
 
 UCLASS(minimalapi)
-class ARPGGameMode : public AGameModeBase
+class ARPGGameMode : public ARPGGameModeBase
 {
 	GENERATED_BODY()
 
 public:
-	ARPGGameMode();
+	virtual void PawnKilled(APawn* PawnKilled) override;
+private:
+	void EndGame(bool isPlayerWinner);
 };
-
-
-

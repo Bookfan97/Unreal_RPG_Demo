@@ -7,8 +7,8 @@
 #include "MagicAIController.generated.h"
 
 /**
- * 
- */
+*
+*/
 UCLASS()
 class RPG_API AMagicAIController : public AAIController
 {

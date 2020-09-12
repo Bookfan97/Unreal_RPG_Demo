@@ -12,11 +12,11 @@ UCLASS()
 class RPG_API AMagicProjectile : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+	public:
 	// Sets default values for this actor's properties
 	AMagicProjectile();
-	
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -29,7 +29,7 @@ public:
 	void FireInDirection(const FVector& ShootDirection);
 
 	UFUNCTION()
-void Fire();
+        void Fire();
 
 	protected:
 	// Called when the game starts or when spawned

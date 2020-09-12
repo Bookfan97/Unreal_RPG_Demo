@@ -43519,6 +43519,8 @@
           <e p="RPGGameMode.h" t="Include" />
           <e p="RPGGameModeBase.cpp" t="Include" />
           <e p="RPGGameModeBase.h" t="Include" />
+          <e p="RPGPlayerController.cpp" t="Include" />
+          <e p="RPGPlayerController.h" t="Include" />
         </e>
         <e p="RPG.Target.cs" t="Include" />
         <e p="RPGEditor.Target.cs" t="Include" />

@@ -7,15 +7,15 @@
 #include "BTService_PlayerLocationIfSeen.generated.h"
 
 /**
- * 
- */
+*
+*/
 UCLASS()
 class RPG_API UBTService_PlayerLocationIfSeen : public UBTService_BlackboardBase
 {
 	GENERATED_BODY()
 	public:
-    	UBTService_PlayerLocationIfSeen();
-    
-    protected:
-    	virtual void TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds) override;
+	UBTService_PlayerLocationIfSeen();
+
+	protected:
+	virtual void TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds) override;
 };

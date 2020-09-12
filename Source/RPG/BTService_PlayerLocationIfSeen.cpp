@@ -3,7 +3,6 @@
 
 #include "BTService_PlayerLocationIfSeen.h"
 
-
 #include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Kismet/GameplayStatics.h"

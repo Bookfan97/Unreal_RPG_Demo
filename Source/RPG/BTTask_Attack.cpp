@@ -3,7 +3,6 @@
 
 #include "BTTask_Attack.h"
 
-
 #include "AIController.h"
 #include "RPGCharacter.h"
 
@@ -28,7 +27,7 @@ EBTNodeResult::Type UBTTask_Attack::ExecuteTask(UBehaviorTreeComponent& OwnerCom
         UE_LOG(LogTemp, Warning, TEXT("No AI owner"));
         return EBTNodeResult::Failed;
     }
-   
+
     Character->Attack();
     return EBTNodeResult::Succeeded;
 }
