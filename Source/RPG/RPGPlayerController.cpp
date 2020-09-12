@@ -25,5 +25,5 @@ void ARPGPlayerController::GameHasEnded(AActor* EndGameFocus, bool bIsWinner)
             LoseScreen->AddToViewport();
         }
     }
-    GetWorldTimerManager().SetTimer(RestartTimer, this, &APlayerController::RestartLevel, RestartDelay);
+    GetWorldTimerManager().SetTimer(RestartTimer, this, &ARPGPlayerController::RestartLevel, RestartDelay);
 }

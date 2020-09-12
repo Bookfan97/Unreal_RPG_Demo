@@ -141,20 +141,25 @@ void ARPGCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location
 
 void ARPGCharacter::Attack()
 {
-	FVector PlayerLoc = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-	FRotator PlayerRot = UKismetMathLibrary::FindLookAtRotation(this->GetActorLocation(), PlayerLoc);
-	bool rotation = this->SetActorRotation(PlayerRot, ETeleportType::None);
-	if (isMelee)
+	 APawn* Player = GetWorld()->GetFirstPlayerController()->GetPawn();
+	if (Player)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("This is a melee attack"));
-		//CharacterMeleeAttack();
+		FVector PlayerLoc = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+			FRotator PlayerRot = UKismetMathLibrary::FindLookAtRotation(this->GetActorLocation(), PlayerLoc);
+        	bool rotation = this->SetActorRotation(PlayerRot, ETeleportType::None);
+        	if (isMelee)
+        	{
+        		UE_LOG(LogTemp, Warning, TEXT("This is a melee attack"));
+        		//CharacterMeleeAttack();
+        	}
+        	if (isMagic)
+        	{
+        		UE_LOG(LogTemp, Warning, TEXT("This is a magic attack"));
+        		toAttack = true;
+        		CharacterMagicAttack(PlayerLoc);
+        	}
 	}
-	if (isMagic)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("This is a magic attack"));
-		toAttack = true;
-		CharacterMagicAttack(PlayerLoc);
-	}
+
 }
 
 void ARPGCharacter::CharacterMeleeAttack()

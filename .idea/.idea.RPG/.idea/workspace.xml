@@ -24,23 +24,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/MyRPGPlayerController.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/WBP_LoseScreen_.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Test/WBP_WinScreen_.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/MagicPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/MagicPawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/MyRPGGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/MyRPGGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/PlayerPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/PlayerPawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/MagicAIController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/MagicAIController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/MagicProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/MagicProjectile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RPG/RPGPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RPG/RPGPlayerController.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,17 +60,17 @@
         <option value="$PROJECT_DIR$/Source/RPG/BTService_PlayerLocationIfSeen.h" />
         <option value="$PROJECT_DIR$/Source/RPG/BTTask_Attack.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/BTTask_Attack.h" />
-        <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.h" />
         <option value="$PROJECT_DIR$/Source/RPG/MagicProjectile.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/MagicProjectile.h" />
         <option value="$PROJECT_DIR$/Source/RPG/RPG.Build.cs" />
-        <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.h" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGGameMode.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGGameMode.h" />
-        <option value="$PROJECT_DIR$/Source/RPG/RPGPlayerController.cpp" />
         <option value="$PROJECT_DIR$/Source/RPG/RPGPlayerController.h" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPGPlayerController.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/MagicAIController.cpp" />
+        <option value="$PROJECT_DIR$/Source/RPG/RPGCharacter.cpp" />
       </list>
     </option>
   </component>
@@ -86,6 +80,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34950384" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29988974" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -426,7 +422,7 @@
       <workItem from="1599535486925" duration="863000" />
       <workItem from="1599579537027" duration="2547000" />
       <workItem from="1599601321779" duration="1792000" />
-      <workItem from="1599936129815" duration="1989000" />
+      <workItem from="1599936129815" duration="5451000" />
     </task>
     <servers />
   </component>
@@ -448,22 +444,78 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1258" height="401" key="GridCell.Tab.0.bottom" timestamp="1599513668868">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="3275" y="224" key="#xdebugger.evaluate" timestamp="1599952263958">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3275" y="224" key="#xdebugger.evaluate/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952263958" />
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1599952579120">
+      <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state width="1258" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
-    <state width="1258" height="401" key="GridCell.Tab.0.center" timestamp="1599513668868">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579120" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1599952579120">
+      <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state width="1258" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
-    <state width="1258" height="401" key="GridCell.Tab.0.left" timestamp="1599513668868">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579120" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1599952579120">
+      <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state width="1258" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
-    <state width="1258" height="401" key="GridCell.Tab.0.right" timestamp="1599513668868">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579120" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1599952579120">
+      <screen x="2560" y="0" width="1920" height="1040" />
     </state>
     <state width="1258" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1599513668868" />
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579120" />
+    <state width="938" height="375" key="GridCell.Tab.1.bottom" timestamp="1599952579099">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579099" />
+    <state width="938" height="375" key="GridCell.Tab.1.center" timestamp="1599952579099">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.1.center/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579099" />
+    <state width="938" height="375" key="GridCell.Tab.1.left" timestamp="1599952579099">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.1.left/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579099" />
+    <state width="938" height="375" key="GridCell.Tab.1.right" timestamp="1599952579099">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.1.right/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579099" />
+    <state width="938" height="375" key="GridCell.Tab.2.bottom" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.2.bottom/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
+    <state width="938" height="375" key="GridCell.Tab.2.center" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.2.center/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
+    <state width="938" height="375" key="GridCell.Tab.2.left" timestamp="1599952579099">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.2.left/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579099" />
+    <state width="938" height="375" key="GridCell.Tab.2.right" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.2.right/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
+    <state width="938" height="375" key="GridCell.Tab.3.bottom" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.3.bottom/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
+    <state width="938" height="375" key="GridCell.Tab.3.center" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.3.center/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
+    <state width="938" height="375" key="GridCell.Tab.3.left" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.3.left/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
+    <state width="938" height="375" key="GridCell.Tab.3.right" timestamp="1599952579100">
+      <screen x="2560" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="375" key="GridCell.Tab.3.right/0.0.2560.1400/2560.0.1920.1040@2560.0.1920.1040" timestamp="1599952579100" />
     <state x="1002" y="583" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1599413428498">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

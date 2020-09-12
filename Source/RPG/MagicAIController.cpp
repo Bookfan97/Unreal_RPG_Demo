@@ -9,7 +9,7 @@
 void AMagicAIController::BeginPlay()
 {
     Super::BeginPlay();
-    Super::BeginPlay();
+    //Super::BeginPlay();
     if (AIBehavior != nullptr)
     {
         RunBehaviorTree(AIBehavior);
@@ -23,7 +23,11 @@ void AMagicAIController::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
     APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-    GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLocation"), PlayerPawn->GetActorLocation());
+    if (PlayerPawn)
+    {
+        GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLocation"), PlayerPawn->GetActorLocation());
+    }
+    
 }
 
 bool AMagicAIController::IsDead() const
