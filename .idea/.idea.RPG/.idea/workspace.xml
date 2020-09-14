@@ -24,14 +24,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93475d0c-90c2-49d8-9d05-371f3c079604" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Test/NewMaterial.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/AdvancedMagicFX12/Maps/Overview.umap" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meadow_Environment_Set/Maps/Meadow_Environment_Set_Map_BuiltData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/MyRPGPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/MyRPGPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/WBP_LoseScreen_.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/WBP_LoseScreen_.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Test/WBP_WinScreen_.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/WBP_WinScreen_.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/PlayerPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Blueprints/PlayerPawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/ABP_MeleeCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/ABP_MeleeCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/BP_ShooterAIController.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/BS_Locomotion.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Test/MeleePawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Test/MeleePawn.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,6 +420,7 @@
       <workItem from="1599601321779" duration="1792000" />
       <workItem from="1599936129815" duration="5451000" />
       <workItem from="1599952616862" duration="1576000" />
+      <workItem from="1600058654379" duration="413000" />
     </task>
     <servers />
   </component>
