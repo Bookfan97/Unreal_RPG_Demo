@@ -17,7 +17,7 @@
 	"Plugins": [
 		{
 			"Name": "RadialMenu",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/be623df092c442609c20a840630031fb"
 		},
 		{
@@ -31,7 +31,7 @@
 		},
 		{
 			"Name": "PTMTool",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/946185f2400d4be9b8d4190e95df86c8"
 		}
 	]
